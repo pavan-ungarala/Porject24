@@ -1,8 +1,10 @@
 package com.infy.easy;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 import java.util.Set;
 
 public class MaxIPAddress {
@@ -30,6 +32,22 @@ public class MaxIPAddress {
 			}
 		}
 		System.out.println(repetedIP);
+		
+		/*
+		//Logic implemented by using stream api
+		Map<Object, Integer> ipAddresses = Arrays.stream(urls)
+										         .map(url -> url.substring(0, url.indexOf(" ")))
+										         .collect(Collectors.toMap(ip -> ip, ip -> 1, Integer::sum));
+		int maxValue = ipAddresses.values()
+						.stream()
+						.max(Integer::compare)
+						.orElse(0);
+		System.out.println("Most repeated ip address is ::");
+		ipAddresses.entrySet().stream()
+		.filter(entry -> entry.getValue() == maxValue)
+		.map(Map.Entry::getKey)
+		.toList().forEach(System.out::println);
+		*/
 	}
 
 }
