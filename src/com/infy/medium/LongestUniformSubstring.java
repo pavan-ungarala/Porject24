@@ -7,7 +7,7 @@ public class LongestUniformSubstring {
 
 	public static void main(String[] args) {
 		String input = "10000111";
-		//String input = "";
+		String input2 = "";
 		int[] output = new int[2];
 		List<String> longestStrList = new ArrayList<>();
 		int startIndex = 0;
